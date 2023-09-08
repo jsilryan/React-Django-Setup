@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% if debug %}
+    <script type="module">
+        import RefreshRuntime from 'http://localhost:5173/@react-refresh'
+        RefreshRuntime.injectIntoGlobalHook(window)
+        window.$RefreshReg$ = () => {}
+        window.$RefreshSig$ = () => (type) => type
+        window.__vite_plugin_react_preamble_installed__ = true
+      </script> 
+      <script type="module" src="http://localhost:5173/src/main.jsx"></script>
+      {% else %}
+      <h1>Not Debug</h1>
+      <script type="module" crossorigin src="{% static '/assets/index-b174fa7f.js'%}"></script>
+      <link rel="stylesheet" href="{% static '/assets/index-d526a0c5.css'%}">
+        {% endif %}
+</head>
+<body>
+    <div id = "root"></div>
+</body>
+</html>
